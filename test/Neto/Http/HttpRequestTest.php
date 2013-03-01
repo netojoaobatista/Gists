@@ -258,17 +258,13 @@ class HttpRequestTest extends \PHPUnit_Framework_TestCase
     public function testExecutingRequestWithPostMethodWillSendTheParametersWithRequestBody()
     {
         $streamWrapper = $this->getMockBuilder('HttpWrapper')
-                              ->setMethods(array('stream_open', 'stream_stat'))
+                              ->setMethods(array('stream_open'))
                               ->getMock();
 
         $streamWrapper->expects($this->at(0))
                       ->method('stream_open')
                       ->with('http://test.com/path', 'rb', null)
                       ->will($this->returnValue(true));
-
-        $streamWrapper->expects($this->at(1))
-                      ->method('stream_stat')
-                      ->will($this->returnValue(array('A' => 10)));
 
         HttpWrapperProxy::register($streamWrapper);
 
