@@ -263,9 +263,9 @@ A interface da classe que servirá como stream wrapper é a seguinte:
 
 O mais interessante, contudo, é que não precisamos implementar toda a interface. Para ilustrar o uso de StreamWrapper + Proxy + Mock, vou criar alguns participantes:
 
-`Gists` - Um participante que obterá detalhes sobre os gists de um usuário do Github.
-`Gist` - Uma entidade que representa os dados de um Gist.
-`HttpRequest` - O participante responsável pela requisição HTTP.
-`StreamWrapperProxy` - O proxy que permitirá que os testes sejam feitos.
+* `Gists` - Um participante que obterá detalhes sobre os gists de um usuário do Github.
+* `Gist` - Uma entidade que representa os dados de um Gist.
+* `HttpRequest` - O participante responsável pela requisição HTTP.
+* `StreamWrapperProxy` - O proxy que permitirá que os testes sejam feitos.
 
 Além disso, a [documentação da API do Github para os Gists](http://developer.github.com/v3/gists/) será fundamental.
